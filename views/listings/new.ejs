@@ -1,5 +1,5 @@
 <% layout("/layouts/boilerplate") %>
-
+  <br><br>
   <div class="row">
     <div class="col-8 offset-2">
 
@@ -9,7 +9,7 @@
         <form method="POST" action="/listings">
           <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input name="listing[title]" type="text" class="form-control" />
+            <input name="listing[title]" type="text" placeholder="Add a catchy title" class="form-control" />
           </div>
 
           <div class="mb-3">
@@ -18,28 +18,30 @@
           </div>
           <div class="mb-3">
             <label for="image" class="form-label">Image Link</label>
-            <input name="listing[image]" type="text" class="form-control" />
+            <input name="listing[image]" type="text" placeholder="enter image URL/link" class="form-control" />
           </div>
           <div class="row">
             <div class="mb-3 col-md-4">
               <label for="price" class="form-label">Price</label>
-              <input name="listing[price]" type="number" class="form-control" />
+              <input name="listing[price]" type="number" placeholder="1100" class="form-control" />
             </div>
 
             <div class="mb-3 col-md-8">
               <label for="country" class="form-label">Country</label>
-              <input name="listing[country]" type="text" class="form-control" />
+              <input name="listing[country]" type="text" placeholder="India" class="form-control" />
             </div>
           </div>
 
           <div class="mb-3">
             <label for="location" class="form-label">Location</label>
-            <input name="listing[location]" type="text" class="form-control" />
+            <input name="listing[location]" type="text" placeholder="Howrah, WestBengal" class="form-control" />
           </div>
 
           <br /><br />
-          <button>Add</button>
+          <button class="btn btn-danger">Add</button>
+
         </form>
       </body>
     </div>
   </div>
+  <br><br>
