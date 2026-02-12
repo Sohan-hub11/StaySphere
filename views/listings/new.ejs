@@ -6,15 +6,21 @@
       <body>
         <h3>Create a New Listing</h3>
         <br>
-        <form method="POST" action="/listings">
+        <form method="POST" action="/listings" novalidate class="needs-validation">
           <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input name="listing[title]" type="text" placeholder="Add a catchy title" class="form-control" required />
+            <div class="valid-feedback">
+              Looks good!
+            </div>
           </div>
 
           <div class="mb-3">
             <label for="description" class="form-label">Description</label>
             <textarea name="listing[description]" class="form-control" required></textarea>
+            <div class="invalid-feedback">
+              Please provide a short Description!
+            </div>
           </div>
           <div class="mb-3">
             <label for="image" class="form-label">Image Link</label>
@@ -23,12 +29,18 @@
           <div class="row">
             <div class="mb-3 col-md-4">
               <label for="price" class="form-label">Price</label>
-              <input name="listing[price]" type="number" placeholder="1100" class="form-control" required />
+              <input name="listing[price]" placeholder="1100" class="form-control" required />
+              <div class="invalid-feedback">
+                Price should be valid!
+              </div>
             </div>
 
             <div class="mb-3 col-md-8">
               <label for="country" class="form-label">Country</label>
               <input name="listing[country]" type="text" placeholder="India" class="form-control" required />
+              <div class="invalid-feedback">
+                Please provide a valid Country name!
+              </div>
             </div>
           </div>
 
@@ -36,6 +48,9 @@
             <label for="location" class="form-label">Location</label>
             <input name="listing[location]" type="text" placeholder="Howrah, WestBengal" class="form-control"
               required />
+            <div class="invalid-feedback">
+              Please provide a valid location!
+            </div>
           </div>
 
           <br /><br />
