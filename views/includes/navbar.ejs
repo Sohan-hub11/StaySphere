@@ -1,6 +1,33 @@
+<style>
+  .search-btn {
+    background-color: #fe424d;
+    color: white;
+    border-radius: 25px;
+    padding: 0 1rem 0 1rem;
+  }
+
+  .search-btn:hover {
+    background-color: #fe424d;
+    color: white;
+    border-radius: 25px;
+    padding: 0 1rem 0 1rem;
+    opacity: 0.8;
+  }
+
+  .search-btn i {
+    display: inline;
+    margin-right: 0.5rem;
+  }
+
+  .search-inp {
+    border-radius: 25px;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+  }
+</style>
+
 <nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-hotel"></i>StaySphere</a>
+    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-hotel"></i><b>StaySphere</b></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -10,20 +37,56 @@
       <!-- Center Items -->
       <div class="navbar-nav mx-auto">
         <a class="nav-link px-3" href="/listings">Explore</a>
-        <a class="nav-link px-3" href="/listings/experiences">Experiences</a>
-        <a class="nav-link px-3" href="/listings/services">Services</a>
+        <a class="nav-link px-3">Experiences</a>
+        <a class="nav-link px-3"">Services</a>
+
+        <form class=" d-flex" role="search">
+          <input class="form-control me-2 search-inp" type="search" placeholder="Search Destinations"
+            aria-label="Search" />
+          <button class=" btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+          </form>
       </div>
 
       <!-- Right Items -->
       <div class=" navbar-nav">
-        <a class="nav-link" href="/listings/new">Become a Host</a>
-        <% if(!currUser) { %>
-          <a class=" nav-link" href="/signup"><b>Sign up</b></a>
-          <a class="nav-link" href="/login"><b>Log in</b></a>
-          <% } %>
-            <% if(currUser) { %>
-              <a class="nav-link" href="/logout"><b>Log out</b></a>
+        <a class="nav-link" href="/listings/new">Become a host</a>
+
+        <div class="dropdown ms-auto">
+          <!-- 3 Line Button -->
+          <button class="btn border rounded-pill px-3 py-2 d-flex align-items-center gap-2" type="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-user-circle fs-5"></i>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <ul class="dropdown-menu dropdown-menu-end shadow">
+            <li>
+              <a class="dropdown-item" href="/listings/new"><b>Become a host</b></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="/listings/new">Refer a host</a>
+              <a class="dropdown-item" href="/listings/new">Become a Co-host</a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <% if(!currUser) { %>
+              <li><a class="dropdown-item" href="/signup">Sign up</a></li>
+              <li><a class="dropdown-item" href="/login">Log in</a></li>
               <% } %>
+
+                <% if(currUser) { %>
+                  <li><a class="dropdown-item" href="/logout">Log out</a></li>
+                  <% } %>
+          </ul>
+
+        </div>
       </div>
     </div>
   </div>
