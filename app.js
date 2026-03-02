@@ -102,7 +102,7 @@ app.use("/", userRouter);
 
 // Root route
 app.get("/", (req, res) => {
-  res.send("StaySphere Backend Running 🚀");
+  res.redirect("/listings");
 });
 
 // app.get("/testlisting", async(req, res) => {
