@@ -63,10 +63,6 @@ const sessionOptions = {
   }
 };
 
-app.get("/", (req, res) => {
-  res.send("This is my root");
-});
-
 app.use(session(sessionOptions));
 app.use(flash());
 
@@ -104,6 +100,11 @@ app.use("/listings/:id/reviews", reviewRouter);
 //User
 app.use("/", userRouter);
 
+// Root route
+app.get("/", (req, res) => {
+  res.send("StaySphere Backend Running 🚀");
+});
+
 // app.get("/testlisting", async(req, res) => {
 //   let sampleListing = new Listing ({
 //     title: "My Home",
@@ -124,6 +125,8 @@ app.use((err, req, res, next) => {
   // res.status(statusCode).send(message);
 });
 
-app.listen(8080, () => {
-  console.log("App is listening on Port 8080");
-})
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+  console.log(`App is listening on Port ${PORT}`);
+});
